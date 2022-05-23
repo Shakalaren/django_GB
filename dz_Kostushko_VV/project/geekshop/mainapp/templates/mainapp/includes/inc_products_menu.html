@@ -1,0 +1,6 @@
+<ul class="links-menu">
+  {% for link_menu in links_menu %}
+      <li>
+          <a href="{% url link_menu.href %}" class="active">{{ link_menu.title}}</a></li>
+  {% endfor %}
+</ul>
