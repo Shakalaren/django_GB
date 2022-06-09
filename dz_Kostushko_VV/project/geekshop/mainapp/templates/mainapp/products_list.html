@@ -13,7 +13,15 @@
 			<div class="links clearfix">
 				{% include 'mainapp/includes/inc_products_menu.html' %}
 			</div>
-
+			<div class="pagination">
+				{% if products.has_previous %}
+					<a href="?page={{ products.previous_page_number }}"><< Prev</a>
+				<span>Страница {{ products.number}} из {{ products.paginator.num_pages }}</span>
+				{% endif %}
+				{% if products.has_next %}
+					<a href="?page={{ products.next_page_number }}">Next >></a>
+				{% endif %}
+			</div>
 			<div class="products">
                 <div class="title clearfix">
                     <h2>
